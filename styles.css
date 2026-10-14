@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'CustomFont';
+    src:url('Evil Empire.otf') format('opentype');
+font-weight: normal;
+    font-style: normal;
+}
+
+
+#startBTN {
+    background-color: #31864394;
+    border-radius: 5px;
+    border: none;
+    color: rgb(231, 222, 222);
+    padding: 20px 200px;
+    text-align: center;
+    display: inline-block;
+    font-size: 2em;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    font-weight: bold;
+   
+    
+    
+}
+#startBTN:hover {
+    background-color: #055516;
+    transform: scale(1.05);
+}
+body {
+    background-color: #0a223dfb;
+    font-family: 'CustomFont', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+     font-weight: bold;
+
+}
+#welcome-heading {
+    color: #ffffff;
+    text-align: center;
+    font-size: 5em;
+    margin-bottom: 20px;
+    font-family: 'CustomFont';
+}
+.description {
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    font-family: 'CustomFont';
+}
+.screen {
+    display: none;
+}
+.screen.active {
+    display: block;
+}
+#mode-selection {
+    color: #ffffff;
+    text-align: center;
+    font-size: 5em;
+    margin-bottom: 20px;
+    font-family: 'CustomFont';
+}
+
+.h2 {
+    color: #d6b7b7;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: 'CustomFont';
+  
+}
+#lessonBTN {
+    flex: 1;
+    background-color: #31864394;
+    border-radius: 10px;
+    border: 2px solid;
+    
+}
+#gameBTN {
+    flex: 1;
+    background-color: #31864394;
+    border-radius: 10px;
+    border: 2px solid;
+}
+#lessonBTN:hover, #gameBTN:hover {
+    background-color: #112b178e;
+    transform: scale(1.05);
+    transition: background-color 0.3s ease;
+}
+
+.lessonSidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100%;
+    background-color: #0d3864;
+    padding: 25px 20px;
+    background-color: #112e4efb;
+  
+}
+ul.lessonList {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+ul.lessonList li a {
+    color: white;
+   font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 10px;
+    padding: 15px 20px;;
+    align-items: center;
+    white-space: nowrap;
+    line-height: 3;
+}
+.logo {
+    width: 45px;
+    height:auto;
+    border-radius: 25%;
+    margin-bottom: 15px;
+   display: inline;
+}
+#lesson-heading {
+   color: white;
+   display: inline-block;
+   font-size: 3em;
+   margin: auto 0;

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard|phishing" />
+</head>
+<body>
+    <div class="screen" id="screen-welcome">
+        <h1 id="welcome-heading">Welcome to ZeroTrust</h1>
+        <p class="description" id="p1">An Interactive Learning and training Platform for CyberSecurity</p>
+        <button id="startBTN" onclick="showScreen('screen-modes')">Start</button>
+    </div>
+    <div class="screen " id="screen-modes">
+        <h1 id="mode-selection">Select a Mode</h1>
+        <button id="lessonBTN" onclick="showScreen('screen-lessons')">
+        <h2 class="h2" id="lesson-heading">Learn</h2>
+        <p class="description">Recommended for Beginners</p></button>
+        <button id="gameBTN" onclick="showScreen('screen-game')">
+        <h2 class="h2" id="game-heading">Play</h2>
+        <p class="description">Test out your newfound skills!</p></button>
+    </div>
+    <div class="screen active" id="screen-lessons">
+    <aside class="lessonSidebar">
+        <div class="sideBarHeader">
+            <img src="logo.png.png" alt="ZeroTrust Logo" class="logo">
+            <h2 id="lesson-heading">Lessons</h2>
+        </div>
+        <ul class="lessonList">
+            <li><a href="#"><span class="material-symbols-outlined"> dashboard </span> Dashboard</a></li>
+           <li><a href="#"><span class="material-symbols-outlined">
+phishing
+</span>Lesson 1 ~ Phishing</a></li>
+            <li><a href="#">Lesson 2 ~ Ransomware/Malware </a></li>
+             <li><a href="#">Lesson 3 ~ Man In The Middle</a></li>
+              <li><a href="#">Lesson 4 ~ Social Engineering</a></li>
+               <li><a href="#">Lesson 5 ~ Password Security/ Brute Force</a></li>
+                <li><a href="#">Lesson 6</a></li>
+               
+        </ul>
+
+
+
+
+
+
+    </aside>
+
+    <script src="zero.js"> </script>
+</body>
+</html>
