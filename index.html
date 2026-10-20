@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dashboard|phishing" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=dashboard">
 </head>
 <body>
+<!-- Welcome Screen -->
     <div class="screen" id="screen-welcome">
         <h1 id="welcome-heading">Welcome to ZeroTrust</h1>
         <p class="description" id="p1">An Interactive Learning and training Platform for CyberSecurity</p>
         <button id="startBTN" onclick="showScreen('screen-modes')">Start</button>
     </div>
+    <!--Gsme Mode Selection Screen -->
     <div class="screen " id="screen-modes">
         <h1 id="mode-selection">Select a Mode</h1>
         <button id="lessonBTN" onclick="showScreen('screen-lessons')">
@@ -22,32 +24,76 @@
         <h2 class="h2" id="game-heading">Play</h2>
         <p class="description">Test out your newfound skills!</p></button>
     </div>
+    <!--Lesson Mode Screen -->
     <div class="screen active" id="screen-lessons">
     <aside class="lessonSidebar">
+        <!-- Sidebar Header -->
         <div class="sideBarHeader">
             <img src="logo.png.png" alt="ZeroTrust Logo" class="logo">
             <h2 id="lesson-heading">Lessons</h2>
         </div>
-        <ul class="lessonList">
-            <li><a href="#"><span class="material-symbols-outlined"> dashboard </span> Dashboard</a></li>
-           <li><a href="#"><span class="material-symbols-outlined">
-phishing
-</span>Lesson 1 ~ Phishing</a></li>
-            <li><a href="#">Lesson 2 ~ Ransomware/Malware </a></li>
-             <li><a href="#">Lesson 3 ~ Man In The Middle</a></li>
-              <li><a href="#">Lesson 4 ~ Social Engineering</a></li>
-               <li><a href="#">Lesson 5 ~ Password Security/ Brute Force</a></li>
-                <li><a href="#">Lesson 6</a></li>
+        <!-- Lesson List -->
+        <ul class="lessonList"> 
+            <!--Dashboard Logo-->
+            <li id="dashboard-link" class="dashboard-link">
+                <span class="material-symbols-outlined">
+                    dashboard
+                </span> Dashboard</li>
+            <!--Lesson Links-->
+            <li class="sidebar-links"><a href="#" onclick="showLessonContent('lesson-1')">Lesson1 ~ Phishing & Social Engineering</a></li>
+            <li class="sidebar-links "><a href="#" onclick="showLessonContent('lesson-2')">Lesson 2 ~ Passwords & Multi-Factor Authentication(MFA)</a></li>
+             <li class="sidebar-links "><a href="#" onclick="showLessonContent('lesson-3')">Lesson 3 ~ Spotting Scams & Online Fraud</a></li>
+              <li class="sidebar-links" ><a href="#" onclick="showLessonContent('lesson-4')">Lesson 4 ~  Recognizing Malicous Software</a></li>
+               <li class="sidebar-links" ><a href="#" onclick="showLessonContent('lesson-5')">Lesson 5 ~ Safe Public Wi-Fi & Connections</a></li>
+                <li class="sidebar-links"><a href="#" onclick="showLessonContent('lesson-6')">Lesson 6 ~ Device & Software Maintenance</a></li>
                
         </ul>
-
-
-
-
-
-
     </aside>
 
-    <script src="zero.js"> </script>
+<main  class="lesson-display-area">  <!-- Main content area for displaying lesson content -->
+    <div id="lesson-welcome" class="lesson-content-section">
+        <h1>Welcome to the Lessons Section</h1>
+        <p>In this mode you will learn about the various types of cyber attacks and how to mitigate them. Each lesson will cover a specifc topic and will provide examples and best practices to help you stay safe online. Use the sidebar to navigate through the lessons and click on each lesson to view its content.</p>
+    </div>
+    <!--Lesson 1 -->
+    <div id="lesson-1" class="lesson-content-section hidden">
+        <h1>Welcome to the Lessons Section</h1>
+        <h2>Lesson 1: Phishing & Social Engineering</h2>
+        <p>Phishing is a type of cyber attack where attackers impersonate legitimate entities to trick individuals into revealing sensitive information, such as passwords or credit card numbers. Social engineering is a broader term that encompasses various manipulative techniques used to deceive people into divulging confidential information or performing actions that compromise security.</p>
+        <p>To protect yourself from phishing and social engineering attacks, be cautious of unsolicited emails, messages, or phone calls asking for personal information. Verify the sender's identity, avoid clicking on suspicious links, and use multi-factor authentication whenever possible.</p>
+        </div>
+        <!--Lesson 2 -->
+        <div id="lesson-2" class="lesson-content-section hidden">
+            <h2>Lesson 2: Passwords & Multi-Factor Authentication (MFA)</h2>
+            <p>Strong passwords are essential for protecting your online accounts. Use a combination of uppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable information like birthdays or common words.</p>
+            <p>Multi-Factor Authentication (MFA) adds an extra layer of security by requiring users to provide two or more verification factors to gain access to an account. This can include something you know (password), something you have (security token), or something you are (biometric verification).</p>
+        </div>
+        <!--Lesson 3 -->
+        <div id="lesson-3" class="lesson-content-section hidden">
+            <h2>Lesson 3: Spotting Scams & Online Fraud</h2>
+            <p>Strong passwords are essential for protecting your online accounts. Use a combination of uppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable information like birthdays or common words.</p>
+            <p>Multi-Factor Authentication (MFA) adds an extra layer of security by requiring users to provide two or more verification factors to gain access to an account. This can include something you know (password), something you have (security token), or something you are (biometric verification).</p>
+        </div>
+        <!--Lesson 4 -->
+         <div id="lesson-4" class="lesson-content-section hidden">
+            <h2>Lesson 4: Recognizing Malicious Software</h2>
+            <p>Strong passwords are essential for protecting your online accounts. Use a combination of uppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable information like birthdays or common words.</p>
+            <p>Multi-Factor Authentication (MFA) adds an extra layer of security by requiring users to provide two or more verification factors to gain access to an account. This can include something you know (password), something you have (security token), or something you are (biometric verification).</p>
+        </div>
+        <!--Lesson 5 -->
+         <div id="lesson-5" class="lesson-content-section hidden">
+            <h2>Lesson 5: Safe Browsing Practices</h2>
+            <p>Strong passwords are essential for protecting your online accounts. Use a combination of uppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable information like birthdays or common words.</p>
+            <p>Multi-Factor Authentication (MFA) adds an extra layer of security by requiring users to provide two or more verification factors to gain access to an account. This can include something you know (password), something you have (security token), or something you are (biometric verification).</p>
+        </div>
+        <!--Lesson 6 -->
+         <div id="lesson-6" class="lesson-content-section hidden">
+            <h2>Lesson 6: Reporting Security Incidents</h2>
+            <p>Strong passwords are essential for protecting your online accounts. Use a combination of uppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable information like birthdays or common words.</p>
+            <p>Multi-Factor Authentication (MFA) adds an extra layer of security by requiring users to provide two or more verification factors to gain access to an account. This can include something you know (password), something you have (security token), or something you are (biometric verification).</p>
+        </div>
+         </div>
+    </main>
+    <script src="zero.js"></script>
 </body>
 </html>

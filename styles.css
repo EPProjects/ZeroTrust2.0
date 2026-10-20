@@ -68,7 +68,7 @@ body {
 }
 
 .h2 {
-    color: #d6b7b7;
+    color: #dbcfcf;
     text-align: center;
     font-size: 3em;
     margin-bottom: 20px;
@@ -94,34 +94,27 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.lessonSidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 260px;
-    height: 100%;
-    background-color: #0d3864;
-    padding: 25px 20px;
-    background-color: #112e4efb;
-  
-}
+
 ul.lessonList {
     list-style-type: none;
     padding: 0;
     margin-bottom: 20px;
 }
-ul.lessonList li a {
+ul.lessonList a {
     color: white;
    font-weight: bold;
     text-decoration: none;
-    margin-bottom: 10px;
-    padding: 15px 20px;;
+   margin:bottom 5px;
     align-items: center;
-    white-space: nowrap;
-    line-height: 3;
+    line-height: 1.5;
+     display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    
 }
 .logo {
-    width: 45px;
+    width: 100px;
     height:auto;
     border-radius: 25%;
     margin-bottom: 15px;
@@ -132,3 +125,69 @@ ul.lessonList li a {
    display: inline-block;
    font-size: 3em;
    margin: auto 0;
+   padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ffffff;
+}
+.sidebar-links {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.sidebar-links:hover {
+    background-color: #1a4b7c;
+   transform: scale(1.05);
+    transition: background-color 0.5s ease;
+}
+.hidden {
+    display: none !important;
+}
+#dashboard-link {
+    color: white;
+
+}
+.lesson-display-area {
+    flex: 1;
+    padding: 30px;
+}
+.lesson-content-section{
+    color: white;
+
+}
+#lesson-welcome p {
+    text-align: center;
+    font-size: 1.5em;
+}
+.lesson-display-area {
+   flex: 1;
+   min-width: 0;
+   padding: 25px;
+   box-sizing: border-box;}
+#screen-lessons {
+    display: flex;
+   width: 100%;
+   min-height: 100vh;
+   overflow: hidden;
+   box-sizing: border-box;
+}
+.lessonSidebar {
+    width: 250px; 
+    flex-shrink: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #112e4efb;
+}
+.lesson-content-section {
+   width: 100%;
+   max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+/* Lesson */
+#lesson-heading{
+    font-size: 3em;
+    display: flex;
+   justify-content: center;
+
+}

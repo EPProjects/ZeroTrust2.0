@@ -3,6 +3,16 @@ function showScreen(screenId) {
         allScreens.forEach(screen => screen.classList.remove("active"));
         const targetScreen = document.getElementById(screenId)
         if (targetScreen) {
-            targetScreen.classList.add("active");
+        targetScreen.classList.add("active");
+        }
+    }
+    function showLessonContent(lessonId) {
+        const allSections = document.querySelectorAll('.lesson-content-section');
+        allSections.forEach(section => {
+            section.classList.add('hidden');
+        });
+        const targetLesson = document.getElementById(lessonId);
+        if (targetLesson) {
+            targetLesson.classList.remove('hidden');
         }
     }
