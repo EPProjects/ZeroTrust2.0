@@ -28,27 +28,33 @@
     <div class="screen active" id="screen-lessons">
     <aside class="lessonSidebar">
         <!-- Sidebar Header -->
-        <div class="sideBarHeader">
-            <img src="logo.png.png" alt="ZeroTrust Logo" class="logo">
-            <h2 id="lesson-heading">Lessons</h2>
-        </div>
+       
         <!-- Lesson List -->
-        <ul class="lessonList"> 
+        <ul id="lessonList" > 
             <!--Dashboard Logo-->
-            <li id="dashboard-link" class="dashboard-link">
-                <span class="material-symbols-outlined">
-                    dashboard
-                </span> Dashboard</li>
+            
             <!--Lesson Links-->
+          <div id="mySidebar" class="sidebar">
+            <div class="sideBarHeader">
+            <img src="logo.png.png" alt="ZeroTrust Logo" class="logo">
+     
+        </div>
+         
+                <h1 id="hello">Lessons</h1>
+            <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">x</a>
             <li class="sidebar-links"><a href="#" onclick="showLessonContent('lesson-1')">Lesson1 ~ Phishing & Social Engineering</a></li>
             <li class="sidebar-links "><a href="#" onclick="showLessonContent('lesson-2')">Lesson 2 ~ Passwords & Multi-Factor Authentication(MFA)</a></li>
              <li class="sidebar-links "><a href="#" onclick="showLessonContent('lesson-3')">Lesson 3 ~ Spotting Scams & Online Fraud</a></li>
               <li class="sidebar-links" ><a href="#" onclick="showLessonContent('lesson-4')">Lesson 4 ~  Recognizing Malicous Software</a></li>
                <li class="sidebar-links" ><a href="#" onclick="showLessonContent('lesson-5')">Lesson 5 ~ Safe Public Wi-Fi & Connections</a></li>
                 <li class="sidebar-links"><a href="#" onclick="showLessonContent('lesson-6')">Lesson 6 ~ Device & Software Maintenance</a></li>
-               
+       </div>
         </ul>
     </aside>
+    <div id="main">
+        <button  id="openbtn" class="openBtn" onclick="openNav()">Open Sidebar</button>
+
+    </div>
 
 <main  class="lesson-display-area">  <!-- Main content area for displaying lesson content -->
     <div id="lesson-welcome" class="lesson-content-section">
@@ -57,11 +63,30 @@
     </div>
     <!--Lesson 1 -->
     <div id="lesson-1" class="lesson-content-section hidden">
-        <h1>Welcome to the Lessons Section</h1>
-        <h2>Lesson 1: Phishing & Social Engineering</h2>
-        <p>Phishing is a type of cyber attack where attackers impersonate legitimate entities to trick individuals into revealing sensitive information, such as passwords or credit card numbers. Social engineering is a broader term that encompasses various manipulative techniques used to deceive people into divulging confidential information or performing actions that compromise security.</p>
-        <p>To protect yourself from phishing and social engineering attacks, be cautious of unsolicited emails, messages, or phone calls asking for personal information. Verify the sender's identity, avoid clicking on suspicious links, and use multi-factor authentication whenever possible.</p>
-        </div>
+    
+        <h2>Module 1: Phishing & Social Engineering</h2>
+            <P>Email Phishing is an attack that utilizes "harmless" emails to trick you into revealing sensitve information,downloading malware, or sending money</P>
+       <h3>Display Name vs Sender Address</h3>
+         <p>Attackers often set the display name of an email to a trusted brand while using an unrelated or compromised domain</p>
+       <h3>Domain TypoSquatting</h3>
+        <p>Registering domains that look almost identical to legitimate ones, such as replacing letters with similar looking characters</p>
+       <h3>utilization of urgency and Fear tactics</h3>
+         <p>Messages are crafted to generate panic or extreme urgency to force quick, descisions on the victim removing the critical thinking aspect </p>
+       <img src="img.png">
+         <h2>Module 2: Smishing</h2>
+            <p>Text messgae are sent with malicous links claiming to be alerts such as package delivery alerts, bamk security warnings, etc.</p>
+            <img src="img2.png">
+    <h3>Vishing</h3>
+        <p>Phone calls wheer scammer inpersonate trusted authorities to extract personal information</p>
+    <h2>Deceptive Links & Attachments</h2>
+    <h2>Url masking</h2> <p>Using URL shorteners or hyperlinked text to disguise the actual destinatin URL</p>
+        <h3>Dangerous File Extensions</h3>
+            <p>Hiding executable code in double extensions ot telying on archive files to bypass standard email filters</p>
+    <h2>Spear Phishing</h2>
+        <h3>Spear Phishing</h3>
+            <p>Customized emails targeting a specific person or sma;; team using personal details that is collected from public records or social media</p>
+            <img src="img3.png">
+    </div>
         <!--Lesson 2 -->
         <div id="lesson-2" class="lesson-content-section hidden">
             <h2>Lesson 2: Passwords & Multi-Factor Authentication (MFA)</h2>
