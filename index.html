@@ -9,13 +9,15 @@
 </head>
 <body>
 <!-- Welcome Screen -->
-    <div class="screen" id="screen-welcome">
+    <div class="screen active " id="screen-welcome">
         <h1 id="welcome-heading">Welcome to ZeroTrust</h1>
         <p class="description" id="p1">An Interactive Learning and training Platform for CyberSecurity</p>
         <button id="startBTN" onclick="showScreen('screen-modes')">Start</button>
     </div>
     <!--Gsme Mode Selection Screen -->
-    <div class="screen " id="screen-modes">
+
+    <div class="screen" id="screen-modes">
+         <button class="back-btn" onclick="goBack()">Back</button>
         <h1 id="mode-selection">Select a Mode</h1>
         <button id="lessonBTN" onclick="showScreen('screen-lessons')">
         <h2 class="h2" id="lesson-heading">Learn</h2>
@@ -25,7 +27,8 @@
         <p class="description">Test out your newfound skills!</p></button>
     </div>
     <!--Lesson Mode Screen -->
-    <div class="screen active" id="screen-lessons">
+    <div class="screen" id="screen-lessons">
+        
     <aside class="lessonSidebar">
         <!-- Sidebar Header -->
        
@@ -56,7 +59,8 @@
 
     </div>
 
-<main  class="lesson-display-area">  <!-- Main content area for displaying lesson content -->
+<main  class="lesson-display-area">  
+    <button class="back-btn" onclick="goBack()">Back</button><!-- Main content area for displaying lesson content -->
     <div id="lesson-welcome" class="lesson-content-section">
         <h1>Welcome to the Lessons Section</h1>
         <p>In this mode you will learn about the various types of cyber attacks and how to mitigate them. Each lesson will cover a specifc topic and will provide examples and best practices to help you stay safe online. Use the sidebar to navigate through the lessons and click on each lesson to view its content.</p>
@@ -75,7 +79,7 @@
        <img src="img.png">
          <h2>Module 2: Smishing</h2>
             <p>Text messgae are sent with malicous links claiming to be alerts such as package delivery alerts, bamk security warnings, etc.</p>
-            <img src="img2.png">
+            <img  id="png2" src="img2.png">
     <h3>Vishing</h3>
         <p>Phone calls wheer scammer inpersonate trusted authorities to extract personal information</p>
     <h2>Deceptive Links & Attachments</h2>
@@ -89,21 +93,80 @@
     </div>
         <!--Lesson 2 -->
         <div id="lesson-2" class="lesson-content-section hidden">
-            <h2>Lesson 2: Passwords & Multi-Factor Authentication (MFA)</h2>
-            <p>Strong passwords are essential for protecting your online accounts. Use a combination of uppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable information like birthdays or common words.</p>
-            <p>Multi-Factor Authentication (MFA) adds an extra layer of security by requiring users to provide two or more verification factors to gain access to an account. This can include something you know (password), something you have (security token), or something you are (biometric verification).</p>
+            <h1>Module 2: Passwords & Multi-Factor Authentication (MFA)</h1>
+            <h2>Passwords vs Passphrases</h2>
+            <p>Traditional password requirements oftern push users toward hard to remember strings, while passphrases provide greater "randomness" while remaining easy to remember</p>
+            <h3>Password Entropy</h3>
+            <p>A measure of how unpredictable a password is. Length expands search space exponentialy compared to short password with special characters</p>
+            <h3>Dictionary Attacks & Brute-Forcing</h3>
+            <p>Automated tools that test millions of common words, variations and letter/number combinations per second</p>
+            <h2>Password Managers</h2>
+            <h3>Credential Stuffing Threat</h3>
+            <p>When one site suffers a data breach, automated bots try those leaked username/passwords across hundreds of services</p>
+            <h3>Built in Generators & Auto-fill</h3> 
+            <p>Creating strong, random strings for every site without needing to memorize them manually</p>
+            <h2>Types of Multi-Factor Authentication(MFA)</h2>
+            <p>MFA requires two or more distinct verification factors before grating accesss. Somethingyouknopw, something you have, or something you are</p>
+<h3>SMS/Text Based Authentication</h3>
+<p>Codes sent via text message which are vulnerabkle to sim swapping attacks</p>
+<h3>Authenticator Apps</h3>
+<p>Time basedone time passwords generated locally by apps like googel authenticator using an encrypted shared secret</p>
+
+
         </div>
         <!--Lesson 3 -->
         <div id="lesson-3" class="lesson-content-section hidden">
             <h2>Lesson 3: Spotting Scams & Online Fraud</h2>
-            <p>Strong passwords are essential for protecting your online accounts. Use a combination of uppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable information like birthdays or common words.</p>
-            <p>Multi-Factor Authentication (MFA) adds an extra layer of security by requiring users to provide two or more verification factors to gain access to an account. This can include something you know (password), something you have (security token), or something you are (biometric verification).</p>
+            <h3>E commerce & Fake Store Scams</h3>
+            <p>Scammers launch legititmate looking storefronts via taregetd media ads to collect payment data or sell conterfeit items</p>
+            <p>Unrealistic Discounts: Offers featuring luxry goods at 80 -90% below market prcies
+                Irrversible Payment Demands: Seller requires payment exclusivelly through non-refundablke methods like wire transfers or gift cards
+            </p>
+            <h3>Tech support Scams</h3>
+            <p> Browser Lock Screen popups: Fullscreen popups with loud audio alerts, fake virus warnings and official looking logos claiming your system is compromised
+                Remote Access Software: Tech Support scammers ask targets to doenload tools like AnyDesk to"fix" the issue, giving them full control ove rthe computer and banking sessions
+            </p>
+            <h3>Job Offer & Remote Work Schemes</h3>
+            <p>
+                Fake Check Scams: Sending a fradulent check to the candidate to buy "home office equipment", then instrcuting them to transfer the remaining funds back via witr before the check bounces
+            </p>
+                <h3>Interview via Messaging Apps</h3>
+                <p>
+                    Conducting Hiring processes entierely throughanonympous messaging channels without live video calls or verified corporate email correspondance
+                </p>
+                <h3>Investment & Crypto Fraud</h3>
+                <p>
+                    Socxial Engineering Onboarding: Scammers contact victims through wround number texts dating apps or professional networks
+                    Withdrawal Blockades: When a Victim tries to cash out, the platform demands additonal "taxes" processing feesor security dposits nevergiving the funds
+
+
+                </p>
+
+
+
+
+
         </div>
         <!--Lesson 4 -->
          <div id="lesson-4" class="lesson-content-section hidden">
-            <h2>Lesson 4: Recognizing Malicious Software</h2>
-            <p>Strong passwords are essential for protecting your online accounts. Use a combination of uppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable information like birthdays or common words.</p>
-            <p>Multi-Factor Authentication (MFA) adds an extra layer of security by requiring users to provide two or more verification factors to gain access to an account. This can include something you know (password), something you have (security token), or something you are (biometric verification).</p>
+            <h1>Lesson 4: Recognizing Malicious Software</h1>
+            <h2>Types of Malware</h2>
+            <p>Mal ware is an umbrella term for any software intentionally designed to cause disruption damage or unauthorized access to a computer sytstem
+                Ransomware: Encrypts your perosnal files and demands payment in exchange for decryption key 
+                Keyloggers: Quietly records keystrokes, saved broweser passwords transmitting them to command and control systems
+                Trojans: Malicous Programs disguised as legitimite software that execute covert payloads when opened
+                Spyware & Adware: Software that tracks browsing habits, injects unwanted popups, or redirects search traffic to advertising affiliate networks
+            </p>
+            <h2>Malicous Downloads & Pirated Media</h2>
+                <p>Unverified software sources remain a primary vectorfor malware distribution</p>
+                <h3>Pirated Software Risks</h3>
+                <p>File sharing hubs frequently package software installers with bundled trojens or malware</p>
+                <h3>Drive by Downloads</h3>
+                <p>Unintentional software downloads triggered by simply visiting a compromised or malicous web page</p>
+
+
+
+
         </div>
         <!--Lesson 5 -->
          <div id="lesson-5" class="lesson-content-section hidden">
@@ -117,6 +180,9 @@
             <p>Strong passwords are essential for protecting your online accounts. Use a combination of uppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable information like birthdays or common words.</p>
             <p>Multi-Factor Authentication (MFA) adds an extra layer of security by requiring users to provide two or more verification factors to gain access to an account. This can include something you know (password), something you have (security token), or something you are (biometric verification).</p>
         </div>
+         </div>
+         <div class="screen" id="screen-modes">
+            <button class="back-btn" onclick="goBack()">Back</button>
          </div>
     </main>
     <script src="zero.js"></script>
