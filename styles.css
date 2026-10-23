@@ -1,4 +1,6 @@
-
+* {
+    font-family: "Comic Relief";
+}
 #startBTN {
     background-color: #31864394;
     border-radius: 5px;
@@ -16,7 +18,6 @@
     font-weight: bold;
    
     
-    
 }
 #startBTN:hover {
     background-color: #055516;
@@ -24,7 +25,6 @@
 }
 body {
     background-color: #0a223dfb;
-    font-family: 'CustomFont', Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,14 +37,14 @@ body {
     text-align: center;
     font-size: 5em;
     margin-bottom: 20px;
-    font-family: 'CustomFont';
+   border-top: solid white;
+  
 }
 .description {
     color: #ffffff;
     text-align: center;
     font-size: 1.5em;
     margin-bottom: 40px;
-    font-family: 'CustomFont';
 }
 .screen {
     display: none;
@@ -57,7 +57,7 @@ body {
     text-align: center;
     font-size: 5em;
     margin-bottom: 20px;
-    font-family: 'CustomFont';
+   
 }
 
 .h2 {
@@ -65,7 +65,7 @@ body {
     text-align: center;
     font-size: 3em;
     margin-bottom: 20px;
-    font-family: 'CustomFont';
+   
   
 }
 #lessonBTN {
@@ -121,6 +121,15 @@ ul.lessonList a {
    border-radius: 25%;
 }
 #lesson-heading {
+   color: white;
+   display: inline-block;
+   font-size: 3em;
+   margin: auto 0;
+   padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ffffff;
+}
+#game-heading {
    color: white;
    display: inline-block;
    font-size: 3em;
@@ -192,6 +201,12 @@ ul.lessonList a {
    justify-content: center;
 
 }
+#game-heading {
+    font-size: 3em;
+    display: flex;
+   justify-content: center;
+
+}
 
 
 .sidebar {
@@ -211,7 +226,7 @@ ul.lessonList a {
 .sidebar a {
 padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     display: block;
     transition: 0.3s;
@@ -231,7 +246,7 @@ padding: 8px 8px 8px 32px;
     padding: 20px 15px;
     border-radius: 10px;
     border: none;
-    position: fixed;
+    position: absolute;
    top: 15px;
    left: 15px;
    z-index: 1000;
@@ -291,4 +306,39 @@ padding: 8px 8px 8px 32px;
 }
 .back-btn:hover {
 background-color: #1c1fc5;
+}
+#stage {
+    position: relative;
+    display: inline-block;
+    cursor: none;
+    margin-top: 10px;
+}
+#pic {
+    width: 800px;
+    height: 500px;
+    display: block;
+    border: 2px solid #444;
+}
+
+#flag {
+    position: fixed;
+    pointer-events: none;
+    font-size: 4em;
+    height: 1em;
+    transform: translate(-4px, -28px);
+    z-index: 10;
+
+}
+#hud {
+    font-size: 20 px;
+    margin: 10px;
+}
+#msg {
+    height: 30px;
+
+}
+.reveal {
+    position: absolute;
+    border: 3px solid lime;
+    pointer-events: none;
 }

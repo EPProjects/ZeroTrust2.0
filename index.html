@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=dashboard">
 </head>
 <body>
 <!-- Welcome Screen -->
-    <div class="screen active " id="screen-welcome">
+    <div class="screen " id="screen-welcome">
         <h1 id="welcome-heading">Welcome to ZeroTrust</h1>
         <p class="description" id="p1">An Interactive Learning and training Platform for CyberSecurity</p>
         <button id="startBTN" onclick="showScreen('screen-modes')">Start</button>
@@ -185,6 +188,20 @@
             <button class="back-btn" onclick="goBack()">Back</button>
          </div>
     </main>
-    <script src="zero.js"></script>
+
+
+    <div class="screen active"  id="screen-game">
+        <div id="hud">
+            Round<span id="round">1</span><span id="total"></span> | Score: <span id="score">0</span>
+        </div>
+        <div id="msg"></div>
+        <div id="stage">
+            <img id="pic" alt="">
+             <img id="flag" src="flag.png">
+        </div>
+        <br>
+        <button id="nextBtn" style="display:none">Next</button>
+</div>
+    <script src="zero.js"  defer ></script>
 </body>
 </html>
