@@ -12,14 +12,14 @@
 </head>
 <body>
 <!-- Welcome Screen -->
-    <div class="screen " id="screen-welcome">
+    <div class="screen active" id="screen-welcome">
         <h1 id="welcome-heading">Welcome to ZeroTrust</h1>
         <p class="description" id="p1">An Interactive Learning and training Platform for CyberSecurity</p>
         <button id="startBTN" onclick="showScreen('screen-modes')">Start</button>
     </div>
-    <!--Gsme Mode Selection Screen -->
-
-    <div class="screen" id="screen-modes">
+   
+    <!--Game Mode Selection Screen -->
+    <div class="screen " id="screen-modes">
          <button class="back-btn" onclick="goBack()">Back</button>
         <h1 id="mode-selection">Select a Mode</h1>
         <button id="lessonBTN" onclick="showScreen('screen-lessons')">
@@ -30,7 +30,7 @@
         <p class="description">Test out your newfound skills!</p></button>
     </div>
     <!--Lesson Mode Screen -->
-    <div class="screen" id="screen-lessons">
+    <div class="screen " id="screen-lessons">
         
     <aside class="lessonSidebar">
         <!-- Sidebar Header -->
@@ -68,25 +68,46 @@
         <h1>Welcome to the Lessons Section</h1>
         <p>In this mode you will learn about the various types of cyber attacks and how to mitigate them. Each lesson will cover a specifc topic and will provide examples and best practices to help you stay safe online. Use the sidebar to navigate through the lessons and click on each lesson to view its content.</p>
     </div>
+
+<div class="quiz" data-correct="b">
+<h3>Quick Check: Spot threat</h3>
+<div class="quiz-options">
+    <button class="quiz-btn" data-answer="a">A (The email comes from @amazon.com</button>
+    <button class="quiz-btn" data-answer="b">B (The email comes from @amazon.com</button>
+    <button class="quiz-btn" data-answer="c">C (The email comes from @amazon.com</button>
+    <button class="quiz-btn" data-answer="d">D (The email comes from @amazon.com</button>
+    <p class="quiz-feedback" style="display: none;"></p>
+</div>
+
+
+
+
+
+</div>
+
+
     <!--Lesson 1 -->
     <div id="lesson-1" class="lesson-content-section hidden">
     
         <h2>Module 1: Phishing & Social Engineering</h2>
-            <P>Email Phishing is an attack that utilizes "harmless" emails to trick you into revealing sensitve information,downloading malware, or sending money</P>
+           <h2>
+            Phishing
+           </h2> <P>An attack that utilizes "harmless" emails to trick you into revealing sensitve information,downloading malware, or sending money</P>
        <h3>Display Name vs Sender Address</h3>
          <p>Attackers often set the display name of an email to a trusted brand while using an unrelated or compromised domain</p>
        <h3>Domain TypoSquatting</h3>
         <p>Registering domains that look almost identical to legitimate ones, such as replacing letters with similar looking characters</p>
-       <h3>utilization of urgency and Fear tactics</h3>
+       <h3>Utilization of Urgency and Fear tactics</h3>
          <p>Messages are crafted to generate panic or extreme urgency to force quick, descisions on the victim removing the critical thinking aspect </p>
        <img src="img.png">
          <h2>Module 2: Smishing</h2>
-            <p>Text messgae are sent with malicous links claiming to be alerts such as package delivery alerts, bamk security warnings, etc.</p>
+            <p>Text messages are sent with malicous links claiming to be alerts such as package delivery alerts, bank security warnings, etc.</p>
             <img  id="png2" src="img2.png">
-    <h3>Vishing</h3>
-        <p>Phone calls wheer scammer inpersonate trusted authorities to extract personal information</p>
+    <h2>Vishing</h2>
+        <p>Phone calls where a scammer inpersonates trusted authorities to extract personal information</p>
     <h2>Deceptive Links & Attachments</h2>
-    <h2>Url masking</h2> <p>Using URL shorteners or hyperlinked text to disguise the actual destinatin URL</p>
+    <h2>Url masking</h2> 
+        <p>Using URL shorteners or hyperlinked text to disguise the actual destination URL</p>
         <h3>Dangerous File Extensions</h3>
             <p>Hiding executable code in double extensions ot telying on archive files to bypass standard email filters</p>
     <h2>Spear Phishing</h2>
@@ -96,13 +117,13 @@
     </div>
         <!--Lesson 2 -->
         <div id="lesson-2" class="lesson-content-section hidden">
-            <h1>Module 2: Passwords & Multi-Factor Authentication (MFA)</h1>
+         <h1>Module 2: Passwords & Multi-Factor Authentication (MFA)</h1>
             <h2>Passwords vs Passphrases</h2>
-            <p>Traditional password requirements oftern push users toward hard to remember strings, while passphrases provide greater "randomness" while remaining easy to remember</p>
-            <h3>Password Entropy</h3>
+                <p>Traditional password requirements oftern push users toward hard to remember strings, while passphrases provide greater "randomness" while remaining easy to remember</p>
+            <h2>Password Entropy</h2>
             <p>A measure of how unpredictable a password is. Length expands search space exponentialy compared to short password with special characters</p>
-            <h3>Dictionary Attacks & Brute-Forcing</h3>
-            <p>Automated tools that test millions of common words, variations and letter/number combinations per second</p>
+            <h2>Dictionary Attacks & Brute-Forcing</h2>
+             <p>Automated tools that test millions of common words, variations and letter/number combinations per second</p>
             <h2>Password Managers</h2>
             <h3>Credential Stuffing Threat</h3>
             <p>When one site suffers a data breach, automated bots try those leaked username/passwords across hundreds of services</p>
@@ -113,7 +134,7 @@
 <h3>SMS/Text Based Authentication</h3>
 <p>Codes sent via text message which are vulnerabkle to sim swapping attacks</p>
 <h3>Authenticator Apps</h3>
-<p>Time basedone time passwords generated locally by apps like googel authenticator using an encrypted shared secret</p>
+<p>Time basedone time passwords generated locally by apps like google authenticator using an encrypted shared secret</p>
 
 
         </div>
@@ -121,13 +142,13 @@
         <div id="lesson-3" class="lesson-content-section hidden">
             <h2>Lesson 3: Spotting Scams & Online Fraud</h2>
             <h3>E commerce & Fake Store Scams</h3>
-            <p>Scammers launch legititmate looking storefronts via taregetd media ads to collect payment data or sell conterfeit items</p>
-            <p>Unrealistic Discounts: Offers featuring luxry goods at 80 -90% below market prcies
-                Irrversible Payment Demands: Seller requires payment exclusivelly through non-refundablke methods like wire transfers or gift cards
+            <p>Scammers launch legititmate looking storefronts via targeted media ads to collect payment data or sell counterfeit items</p>
+            <p>Unrealistic Discounts: Offers featuring luxry goods at 80-90% below market prcies
+                Irrversible Payment Demands: Seller requires payment exclusivelly through non-refundable methods like wire transfers or gift cards
             </p>
             <h3>Tech support Scams</h3>
             <p> Browser Lock Screen popups: Fullscreen popups with loud audio alerts, fake virus warnings and official looking logos claiming your system is compromised
-                Remote Access Software: Tech Support scammers ask targets to doenload tools like AnyDesk to"fix" the issue, giving them full control ove rthe computer and banking sessions
+                Remote Access Software: Tech Support scammers ask targets to doenload tools like AnyDesk to"fix" the issue, giving them full control over the computer and banking sessions
             </p>
             <h3>Job Offer & Remote Work Schemes</h3>
             <p>
@@ -139,7 +160,7 @@
                 </p>
                 <h3>Investment & Crypto Fraud</h3>
                 <p>
-                    Socxial Engineering Onboarding: Scammers contact victims through wround number texts dating apps or professional networks
+                    Social Engineering Onboarding: Scammers contact victims through wround number texts dating apps or professional networks
                     Withdrawal Blockades: When a Victim tries to cash out, the platform demands additonal "taxes" processing feesor security dposits nevergiving the funds
 
 
@@ -190,7 +211,7 @@
     </main>
 
 
-    <div class="screen active"  id="screen-game">
+    <div class="screen  "  id="screen-game">
         <div id="hud">
             Round<span id="round">1</span><span id="total"></span> | Score: <span id="score">0</span>
         </div>

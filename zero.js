@@ -1,4 +1,5 @@
 let screenHistory = ['screen-welcome']; 
+
 function showScreen(screenId) {
     const allScreens = document.querySelectorAll(".screen");
     allScreens.forEach(screen => screen.classList.remove("active"))
@@ -7,6 +8,10 @@ function showScreen(screenId) {
         targetScreen.classList.add("active");
         if (screenHistory[screenHistory.length - 1] !== screenId) {
             screenHistory.push(screenId);
+        }
+        if (screenId === "screen-lessons") {
+            console.log("Lessons screenloaded");
+            initQuizzez();
         }
     }
 
@@ -47,12 +52,86 @@ function goBack() {
         document.getElementById("openbtn").classList.remove("hidden");
     }
 
-    const rounds = [
-{img: "phishing-email.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" },
-{img: "phishing-email.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" },
 
-    ]
+function initQuizzez() {
+    const quizContainers = document.querySelectorAll(".quiz");
+
+    quizContainers.forEach(container => {
+        const correctOpt = container.getAttribute("data-correct");
+        const buttons = container.querySelectorAll(".quiz-btn");
+        const feedback= container.querySelector(".quiz-feedback");
+
+  buttons.forEach(button => {
+     button.addEventListener("click", () => {
+      const selectedOpt = button.getAttribute("data-answer");
+
+
+buttons.forEach(btn => btn.disabled = true);
+feedback.style.display = "block";
+
+  if (selectedOpt === correctOpt) {
+    button.classList.add("correct");
+    feedback.textContent = "Correct! Great Job";
+    feedback.style.color ="#4ade80";
+  }
+  else {
+    button.classList.add("incorrect");
+    feedback.textContent = "Not quite. Review the section and try again!";
+    feedback.style.color = "#f87171";
+
+    buttons.forEach(btn => {
+        if(btn.getAttribute("data-answer") === correctOpt) {
+            btn.classList.add("correct");
+                           }
+                        });
+                      }
+                 });
+            });
+        });
+     }
     
+
+
+
+
+
+
+
+
+    const rounds = [
+{img: "1.png", region: {x: 20, y: 68, w: 35, h: 12},
+ why: "lorem ipsum"
+ },
+{
+    img: "2.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+},
+{
+    img: "Quishing.png", region: {x: 60, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+},
+
+{
+    img: "Malware.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+},
+
+{
+    img: "WeakPassword.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+},
+
+{
+    img: "PasswordExposed.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+},
+{
+    img: "PackageScam.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+},
+{
+    img: "GiveAwayScam.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+}
+
+
+
+
+    ];
+
 const max_Points = 100;
 let current = 0;
 let score = 0;
@@ -74,30 +153,34 @@ function loadRound() {
     document.getElementById("round").textContent = current + 1;
     stage.querySelectorAll(".reveal").forEach(el => el.remove());
 }
-stage.addEventListener("mousemove", e=> {
+stage.addEventListener("mousemove", e => {
     flag.style.left = e.clientX + "px";
     flag.style.top = e.clientY + "px";
+
 });
 
 pic.addEventListener("click", e => {
+    console.log("hndler fired");
     if (answered) return;
     answered = true;
-
-
-const r = pic.getBoundingClientRect();
-const px = ((e.clientX - r.left) / r.width) * 100;
-const py= ((e.clientY - r.top) / r.heigth) * 100;
 const reg = rounds[current].region;
+const rect = pic.getBoundingClientRect();
 
-const hit = px >= reg.x && px <= reg.x + reg.w &&
-            py >= reg.y && py <= reg.y + reg.h;
+const clickX = (e.clientX - rect.left) / rect.width * 100;
+const clickY = (e.clientY - rect.top) / rect.height * 100;
 
+const hit = 
+  clickX >= reg.x && clickX <= reg.x + reg.w &&
+  clickY >= reg.y && clickY <= reg.y + reg.h;
         let pts = 0;
         if(hit) {
             const cx = reg.x + reg.w / 2;
             const cy = reg.y + reg.h / 2;
-            const dist = Math.hypot((px-cx) / (reg.w / 2), (py - cy) / (reg.h / 2));
-            pts = Math.round(max_Points * (1 - Math.min(dist, 1) * 0.5));
+            const dist = Math.hypot(
+                (clickX -cx) / (reg.w / 2),
+                (clickY - cy) / (reg.h / 2)
+            );
+      pts = Math.max(0, Math.round(max_Points * (1- Math.min(dist, 1))));
         }
     score += pts;
     document.getElementById("score").textContent = score;
@@ -115,8 +198,18 @@ const hit = px >= reg.x && px <= reg.x + reg.w &&
     nextBtn.textContent = current + 1 < rounds.length ? "Next" : "Finish";
     nextBtn.style.display = "inline-block";
     });
+
     nextBtn.addEventListener("click", () => {
+        if(current >= rounds.length) {
+            msg.textContent = `Game Over! Final Score: ${score}`;
+            nextBtn.style.display = "none";
+            current = 0;
+            score = 0;
+            documentElementById("score").textContent = score;
+            return;
+        }
         current++;
+
         if(current >= rounds.length) {
             msg.textContent = `Game Over! Final Score: ${score}`;
             nextBtn.style.display = "none";
@@ -124,5 +217,4 @@ const hit = px >= reg.x && px <= reg.x + reg.w &&
         }
         loadRound();
     });
-    loadRound();
-
+loadRound();
