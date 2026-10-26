@@ -1,1 +1,1 @@
-# My Project 
+Zerotrust is a web app I made using HTML, CSS, and JS, and basically it's a cybersecurity web app that is used to educate users. With dedicated learning and game modes, users can have an enjoyable time learning about online safety while having fun.
