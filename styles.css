@@ -24,20 +24,18 @@
     transform: scale(1.05);
 }
 body {
-    background-color: #0a223dfb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   background-color: #0a223dfb;
     min-height: 100vh;
-     font-weight: bold;
-
+    font-weight: bold;
+    padding: 0;
+   
 }
 #welcome-heading {
     color: #ffffff;
     text-align: center;
     font-size: 5em;
     margin-bottom: 20px;
-   border-top: solid white;
+   
   
 }
 .description {
@@ -53,7 +51,7 @@ body {
     display: block;
 }
 #mode-selection {
-    color: #ffffff;
+  color: #ffffff;
     text-align: center;
     font-size: 5em;
     margin-bottom: 20px;
@@ -69,22 +67,57 @@ body {
   
 }
 #lessonBTN {
-    flex: 1;
+   flex: 0 0 340px;
+    width: 340px;
+    max-width: 340px;
+    min-height: 240px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #31864394;
+    border: 2px solid white;
     border-radius: 10px;
-    border: 2px solid;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
     
 }
 #gameBTN {
-    flex: 1;
+ flex: 0 0 340px;
+    width: 340px;
+    max-width: 340px;
+    min-height: 240px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #31864394;
+    border: 2px solid white;
     border-radius: 10px;
-    border: 2px solid;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+}
+.mode-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
 }
 #lessonBTN:hover, #gameBTN:hover {
     background-color: #112b178e;
     transform: scale(1.05);
     transition: background-color 0.3s ease;
+}
+#screen-modes{
+flex-direction: row;
 }
 
 ul.lessonList {
@@ -124,9 +157,9 @@ ul.lessonList a {
    color: white;
    display: inline-block;
    font-size: 3em;
-   margin: auto 0;
+   margin: 20px 0;
    padding: 20px;
-    text-align: center;
+   text-align: left;
     border-bottom: 1px solid #ffffff;
 }
 #game-heading {
@@ -160,11 +193,8 @@ ul.lessonList a {
     flex: 1;
     padding: 30px;
 }
-.lesson-content-section{
-    color: white;
 
-}
-#lesson-welcome p {
+#lesson-welcome {
     text-align: center;
     font-size: 1.5em;
 }
@@ -177,28 +207,33 @@ ul.lessonList a {
 #screen-lessons {
     display: flex;
    width: 100%;
-   min-height: 100vh;
+   min-height: auto;
    overflow-y: auto;
    box-sizing: border-box;
+   align-items: flex-start;
 }
 
 
 .lessonSidebar {
-    width: 100%;
-    flex-shrink: 0;
+    flex: none;
     box-sizing: border-box;
-    background-color:
+   position: static;
+   width: 0;
+   height: 0;
+   overflow: visible;
 }
 .lesson-content-section {
    width: 100%;
-   max-width: 800px;
+   max-width: 1000px;
    padding: 20px 40px;
-   margin-bottom: 40px;
+  margin: 0 auto 40px auto;
     box-sizing: border-box;
     overflow-wrap: anywhere;
    position: relative;
-   text-align: center;
+   text-align: left;
+   font-size: 1.5em;
 
+color: white;
 }
 .lesson-content-section img {
     width: 100%;
@@ -211,7 +246,7 @@ max-height: 500px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-/* Lesson */
+
 #lesson-heading{
     font-size: 3em;
     display: flex;
@@ -274,7 +309,9 @@ padding: 8px 8px 8px 32px;
 }
 #main {
     transition: margin-left 1s;
-  overflow: auto;
+  overflow: visible;
+  width: 0;
+  flex: none;
    
 }
 #hello {
@@ -307,9 +344,7 @@ padding: 8px 8px 8px 32px;
     display: block !important;
 }
 .lesson-display-area {
-  
-   text-align: center;
-    
+  align-self: flex-start;
 }
 .back-btn {
     position: fixed;
@@ -319,6 +354,7 @@ padding: 8px 8px 8px 32px;
     background-color: #4245ee;
     border: none;
     border-radius: 15px;
+    z-index: 1000;
     
 }
 .back-btn:hover {
@@ -363,8 +399,9 @@ color: white;
 
 #pic {
     display: block;
-    width: 100%;
+    width: auto;
     height: 700px;
+    max-width: 100%;
 }
 #nextBtn {
     border-radius: 5px;

@@ -19,9 +19,18 @@ function showScreen(screenId) {
 function goBack() {
     if (screenHistory.length > 1) {
         screenHistory.pop();
-        const previousScreenId = screenHistory[screenHistory.length -1];
+        const previousScreenId = screenHistory[screenHistory.length - 1];
         const allScreens = document.querySelectorAll(".screen");
         allScreens.forEach(screen => screen.classList.remove("active"));
+        // reset lesson view so nothing leaks into the previous screen
+        document.querySelectorAll('.lesson-content-section').forEach(section => {
+            if (section.id === 'lesson-welcome') {
+                section.classList.remove('hidden');   // welcome stays as the default view
+            } else {
+                section.classList.add('hidden');
+            }
+        });
+        closeNav();
         const targetScreen = document.getElementById(previousScreenId);
         if (targetScreen) {
             targetScreen.classList.add("active");
@@ -37,6 +46,7 @@ function goBack() {
         const targetLesson = document.getElementById(lessonId);
         if (targetLesson) {
             targetLesson.classList.remove('hidden');
+            initQuizzez();
         }
     }
     
@@ -55,6 +65,7 @@ function goBack() {
 
 function initQuizzez() {
     const quizContainers = document.querySelectorAll(".quiz");
+    console.log("Found quiz", quizContainers.length);
 
     quizContainers.forEach(container => {
         const correctOpt = container.getAttribute("data-correct");
@@ -62,33 +73,31 @@ function initQuizzez() {
         const feedback= container.querySelector(".quiz-feedback");
 
   buttons.forEach(button => {
+    const newButton = button.cloneNode(true);
+    button.parentNode.replaceChild(newButton, button);
+  });
+  const freshButtons = container.querySelectorAll(".quiz-btn");
+  freshButtons.forEach(button => {
      button.addEventListener("click", () => {
       const selectedOpt = button.getAttribute("data-answer");
-
-
-buttons.forEach(btn => btn.disabled = true);
 feedback.style.display = "block";
 
   if (selectedOpt === correctOpt) {
+     freshButtons.forEach(btn => btn.disabled = true);
     button.classList.add("correct");
     feedback.textContent = "Correct! Great Job";
     feedback.style.color ="#4ade80";
   }
   else {
     button.classList.add("incorrect");
+    button.disabled = true;
     feedback.textContent = "Not quite. Review the section and try again!";
     feedback.style.color = "#f87171";
-
-    buttons.forEach(btn => {
-        if(btn.getAttribute("data-answer") === correctOpt) {
-            btn.classList.add("correct");
                            }
                         });
-                      }
-                 });
-            });
-        });
-     }
+                      });
+                    }); 
+                }
     
 
 
@@ -99,32 +108,32 @@ feedback.style.display = "block";
 
 
     const rounds = [
-{img: "1.png", region: {x: 20, y: 68, w: 35, h: 12},
- why: "lorem ipsum"
+{img: "1.png", region: {x: 30, y: 3, w: 45, h: 15},
+ why: "The display name read Bank of America but the sender is trust.ameribank7.com. A real bank mails from its own domain; an unrelated or mispelled domain is the giveaway."
  },
 {
-    img: "2.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+    img: "2.png", region: {x: 9, y: 58, w: 42, h: 13}, why: " A billing-hold notice with a single high-pressure button. Update now pushes you to act before you check whether the site is really Netflix; hovering the link would reveal a non-Netflix domain. " 
 },
 {
-    img: "Quishing.png", region: {x: 60, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
-},
-
-{
-    img: "Malware.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+    img: "Quishing.png", region: {x: 5, y: 45, w: 22, h: 32}, why: "A QR code in an email you didn't expect. The code hides the real destination, so you can't inspect it before scanning — the URL is only visible after the phone has already opened it." 
 },
 
 {
-    img: "WeakPassword.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+    img: "Malware.png", region: {x: 40, y: 84, w: 22, h: 10}, why: " A fake antivirus alert. Real scanners don't show a browser-style window with alarming 27 critical security weaknesses copy and a single button — that button is what installs the thing it claims to remove." 
 },
 
 {
-    img: "PasswordExposed.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+    img: "WeakPassword.png", region: {x: 25, y: 35, w: 40, h: 16}, why: "A password on a sticky note in view of the screen. Anyone who walks past, or any camera pointed at the desk, has the credential." 
+},
+
+{
+    img: "PasswordExposed.png", region: {x: 38, y: 40, w: 28, h: 16}, why: "A saved password visible in a login form. Shoulder-surfing or a shared screen is enough, and it's the kind of value that gets reused after a breach." 
 },
 {
-    img: "PackageScam.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+    img: "PackageScam.png", region: {x: 16, y: 85, w: 40, h: 14}, why: "A short link in a missed delivery SMS. The bit.ly wrapper hides where it actually goes, and the reschedule here phrasing is the pressure tactic." 
 },
 {
-    img: "GiveAwayScam.png", region: {x: 55, y: 70, w: 30, h: 10}, why: "lorem ipsum" 
+    img: "GiveAwayScam.png", region: {x: 2, y: 42, w: 64, h: 11}, why: "The countdown and the number of gifts is limited line. Manufactured scarcity plus a timer is the core of a giveaway scam." 
 }
 
 

@@ -22,12 +22,14 @@
     <div class="screen " id="screen-modes">
          <button class="back-btn" onclick="goBack()">Back</button>
         <h1 id="mode-selection">Select a Mode</h1>
+        <div class="mode-row">
         <button id="lessonBTN" onclick="showScreen('screen-lessons')">
         <h2 class="h2" id="lesson-heading">Learn</h2>
         <p class="description">Recommended for Beginners</p></button>
         <button id="gameBTN" onclick="showScreen('screen-game')">
         <h2 class="h2" id="game-heading">Play</h2>
-        <p class="description">Test out your newfound skills!</p></button>
+        <p class="description">Spot the Red Flag</p></button>
+        </div>
     </div>
     <!--Lesson Mode Screen -->
     <div class="screen " id="screen-lessons">
@@ -59,8 +61,8 @@
     </aside>
     <div id="main">
         <button  id="openbtn" class="openBtn" onclick="openNav()">Open Sidebar</button>
-
-    </div>
+</div>
+  
 
 <main  class="lesson-display-area">  
     <button class="back-btn" onclick="goBack()">Back</button><!-- Main content area for displaying lesson content -->
@@ -69,18 +71,6 @@
         <p>In this mode you will learn about the various types of cyber attacks and how to mitigate them. Each lesson will cover a specifc topic and will provide examples and best practices to help you stay safe online. Use the sidebar to navigate through the lessons and click on each lesson to view its content.</p>
     </div>
 
-<div class="quiz" data-correct="b">
-<h3>Quick Check: Spot threat</h3>
-<div class="quiz-options">
-    <button class="quiz-btn" data-answer="a">A (The email comes from @amazon.com</button>
-    <button class="quiz-btn" data-answer="b">B (The email comes from @amazon.com</button>
-    <button class="quiz-btn" data-answer="c">C (The email comes from @amazon.com</button>
-    <button class="quiz-btn" data-answer="d">D (The email comes from @amazon.com</button>
-    <p class="quiz-feedback" style="display: none;"></p>
-</div>
-
-
-
 
 
 </div>
@@ -88,11 +78,9 @@
 
     <!--Lesson 1 -->
     <div id="lesson-1" class="lesson-content-section hidden">
-    
-        <h2>Module 1: Phishing & Social Engineering</h2>
-           <h2>
-            Phishing
-           </h2> <P>An attack that utilizes "harmless" emails to trick you into revealing sensitve information,downloading malware, or sending money</P>
+        <h1>Module 1: Phishing & Social Engineering</h1>
+           <h2>Phishing</h2>
+        <P>An attack that  uses "harmless-looking" emails to trick you into revealing sensitve information,downloading malware, or sending money. Always check the address after the @ symbol, not the name you see.</P>
        <h3>Display Name vs Sender Address</h3>
          <p>Attackers often set the display name of an email to a trusted brand while using an unrelated or compromised domain</p>
        <h3>Domain TypoSquatting</h3>
@@ -104,51 +92,74 @@
             <p>Text messages are sent with malicous links claiming to be alerts such as package delivery alerts, bank security warnings, etc.</p>
             <img  id="png2" src="img2.png">
     <h2>Vishing</h2>
-        <p>Phone calls where a scammer inpersonates trusted authorities to extract personal information</p>
+        <p>Phone calls where a scammer impersonates trusted authorities to extract personal information.</p>
     <h2>Deceptive Links & Attachments</h2>
-    <h2>Url masking</h2> 
+    <h3>Url masking</h3> 
         <p>Using URL shorteners or hyperlinked text to disguise the actual destination URL</p>
         <h3>Dangerous File Extensions</h3>
             <p>Hiding executable code in double extensions ot telying on archive files to bypass standard email filters</p>
     <h2>Spear Phishing</h2>
-        <h3>Spear Phishing</h3>
-            <p>Customized emails targeting a specific person or sma;; team using personal details that is collected from public records or social media</p>
+            <p>Customized emails targeting a specific person or small team using personal details that is collected from public records or social media.</p>
             <img src="img3.png">
+            <div class="quiz" data-correct="b">
+<h3>Quick Check: Phishing Red Flags</h3>
+<div class="quiz-options">
+    <button class="quiz-btn" data-answer="a">A (The email is written in a formal tone</button>
+    <button class="quiz-btn" data-answer="b">B (The display name says "Amazon" but the actual sender address is on an unrelated domain</button>
+    <button class="quiz-btn" data-answer="c">C (The email comes includes an order confirmation number</button>
+    <button class="quiz-btn" data-answer="d">D (The email arrived outside business hours</button>
+    <p class="quiz-feedback" style="display: none;"></p>
+</div>
+
     </div>
+</div>
         <!--Lesson 2 -->
         <div id="lesson-2" class="lesson-content-section hidden">
          <h1>Module 2: Passwords & Multi-Factor Authentication (MFA)</h1>
             <h2>Passwords vs Passphrases</h2>
-                <p>Traditional password requirements oftern push users toward hard to remember strings, while passphrases provide greater "randomness" while remaining easy to remember</p>
+                <p>Traditional password requirements oftern push users toward hard to remember strings, while passphrases provide greater "randomness" while remaining easy to remember.</p>
             <h2>Password Entropy</h2>
-            <p>A measure of how unpredictable a password is. Length expands search space exponentialy compared to short password with special characters</p>
+            <p>A measure of how unpredictable a password is. Length expands search space exponentialy compared to short password with special characters.</p>
             <h2>Dictionary Attacks & Brute-Forcing</h2>
              <p>Automated tools that test millions of common words, variations and letter/number combinations per second</p>
             <h2>Password Managers</h2>
+            <img src="images.jpg">
             <h3>Credential Stuffing Threat</h3>
             <p>When one site suffers a data breach, automated bots try those leaked username/passwords across hundreds of services</p>
             <h3>Built in Generators & Auto-fill</h3> 
             <p>Creating strong, random strings for every site without needing to memorize them manually</p>
             <h2>Types of Multi-Factor Authentication(MFA)</h2>
-            <p>MFA requires two or more distinct verification factors before grating accesss. Somethingyouknopw, something you have, or something you are</p>
-<h3>SMS/Text Based Authentication</h3>
-<p>Codes sent via text message which are vulnerabkle to sim swapping attacks</p>
+            <p>MFA requires two or more distinct verification factors before granting accesss. Something you know, something you have, or something you are</p>
+ 
+            <h3>SMS/Text Based Authentication</h3>
+<p>Codes sent via text message which are vulnerable to sim swapping attacks</p>
 <h3>Authenticator Apps</h3>
-<p>Time basedone time passwords generated locally by apps like google authenticator using an encrypted shared secret</p>
-
-
+<p>Time based one time passwords generated locally by apps like google authenticator using an encrypted shared secret</p>
+<img src="images.png">
+<div class="quiz" data-correct="d">
+    
+<h3>Quick Check: Password Strength</h3>
+<div class="quiz-options">
+    <button class="quiz-btn" data-answer="a">A (P@ssw0rd! - it has symbols and numbers</button>
+    <button class="quiz-btn" data-answer="b">B (Your Birthday plus a special character</button>
+    <button class="quiz-btn" data-answer="c">C (The same strong password reusedon every site</button>
+    <button class="quiz-btn" data-answer="d">D (A long passphrase of several unrelated words</button>
+    <p class="quiz-feedback" style="display: none;"></p>
+</div>
+</div>
         </div>
         <!--Lesson 3 -->
         <div id="lesson-3" class="lesson-content-section hidden">
             <h2>Lesson 3: Spotting Scams & Online Fraud</h2>
             <h3>E commerce & Fake Store Scams</h3>
             <p>Scammers launch legititmate looking storefronts via targeted media ads to collect payment data or sell counterfeit items</p>
-            <p>Unrealistic Discounts: Offers featuring luxry goods at 80-90% below market prcies
+            <p>Unrealistic Discounts: Offers featuring luxury goods at 80-90% below market prcies
                 Irrversible Payment Demands: Seller requires payment exclusivelly through non-refundable methods like wire transfers or gift cards
             </p>
+            <img src="fake.png">
             <h3>Tech support Scams</h3>
-            <p> Browser Lock Screen popups: Fullscreen popups with loud audio alerts, fake virus warnings and official looking logos claiming your system is compromised
-                Remote Access Software: Tech Support scammers ask targets to doenload tools like AnyDesk to"fix" the issue, giving them full control over the computer and banking sessions
+            <p> Browser Lock Screen popups: Fullscreen popups with loud audio alerts, fake virus warnings and official looking logos claiming your system is compromised.
+                Remote Access Software: Tech Support scammers ask targets to doenload tools like AnyDesk to"fix" the issue, giving them full control over the computer and banking sessions.
             </p>
             <h3>Job Offer & Remote Work Schemes</h3>
             <p>
@@ -156,7 +167,7 @@
             </p>
                 <h3>Interview via Messaging Apps</h3>
                 <p>
-                    Conducting Hiring processes entierely throughanonympous messaging channels without live video calls or verified corporate email correspondance
+                    Conducting Hiring processes entierely through anonympous messaging channels without live video calls or verified corporate email correspondance.
                 </p>
                 <h3>Investment & Crypto Fraud</h3>
                 <p>
@@ -165,9 +176,16 @@
 
 
                 </p>
-
-
-
+ <div class="quiz" data-correct="d">
+                <h3>Quick Check: Tech Support scams</h3>
+<div class="quiz-options">
+    <button class="quiz-btn" data-answer="a">A (A popup warning you to update your browser</button>
+    <button class="quiz-btn" data-answer="b">B (A window Notification about a scheduled restart</button>
+    <button class="quiz-btn" data-answer="c">C (An email from your IT department about a password reset</button>
+    <button class="quiz-btn" data-answer="d">D (A full-screen popup with loud audio and fake virus warnings, followed by a request to install remote acesss software like AnyDesk</button>
+    <p class="quiz-feedback" style="display: none;"></p>
+</div>
+</div>
 
 
         </div>
@@ -175,45 +193,110 @@
          <div id="lesson-4" class="lesson-content-section hidden">
             <h1>Lesson 4: Recognizing Malicious Software</h1>
             <h2>Types of Malware</h2>
-            <p>Mal ware is an umbrella term for any software intentionally designed to cause disruption damage or unauthorized access to a computer sytstem
-                Ransomware: Encrypts your perosnal files and demands payment in exchange for decryption key 
-                Keyloggers: Quietly records keystrokes, saved broweser passwords transmitting them to command and control systems
-                Trojans: Malicous Programs disguised as legitimite software that execute covert payloads when opened
-                Spyware & Adware: Software that tracks browsing habits, injects unwanted popups, or redirects search traffic to advertising affiliate networks
+            <p>Malware is an umbrella term for any software intentionally designed to cause disruption damage or unauthorized access to a computer sytstem
+                <h3>Ransomware:</h3> Encrypts your perosnal files and demands payment in exchange for decryption key 
+                 <img src="OIP.png">
+                <h3>Keyloggers:</h3> Quietly records keystrokes, saved broweser passwords transmitting them to command and control systems
+                <h3>Trojans:</h3> Malicous Programs disguised as legitimite software that execute covert payloads when opened
+                <h3>Spyware & Adware:</h3> Software that tracks browsing habits, injects unwanted popups, or redirects search traffic to advertising affiliate networks
             </p>
+           
             <h2>Malicous Downloads & Pirated Media</h2>
                 <p>Unverified software sources remain a primary vectorfor malware distribution</p>
                 <h3>Pirated Software Risks</h3>
-                <p>File sharing hubs frequently package software installers with bundled trojens or malware</p>
+                <p>File sharing hubs frequently package software installers with bundled trojans or malware</p>
                 <h3>Drive by Downloads</h3>
                 <p>Unintentional software downloads triggered by simply visiting a compromised or malicous web page</p>
-
-
-
+ <div class="quiz" data-correct="c">
+    <h3>Quick check: Keyloggers</h3>
+<div class="quiz-options">
+    <button class="quiz-btn" data-answer="a">A (They delete your files unless you pay</button>
+    <button class="quiz-btn" data-answer="b">B (They redirect your search traffic to ads</button>
+    <button class="quiz-btn" data-answer="c">C (They silently record your keystrokes and saved passwords, sending them to a command and control server</button>
+    <button class="quiz-btn" data-answer="d">D (They disguise themselves as legitimate software</button>
+    <p class="quiz-feedback" style="display: none;"></p>
+</div>
+</div>
 
         </div>
         <!--Lesson 5 -->
          <div id="lesson-5" class="lesson-content-section hidden">
-            <h2>Lesson 5: Safe Browsing Practices</h2>
-            <p>Strong passwords are essential for protecting your online accounts. Use a combination of uppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable information like birthdays or common words.</p>
-            <p>Multi-Factor Authentication (MFA) adds an extra layer of security by requiring users to provide two or more verification factors to gain access to an account. This can include something you know (password), something you have (security token), or something you are (biometric verification).</p>
+            <h1>Module 5: Safe Browsing Practices</h1>
+            <h2>Why Open Networks are Risky</h2>
+            <p>On an unecnrypted public network, traffic between your device adn the accesspoint can be captured by anyone else on that network.</p>
+            <img src="netowrk.png">
+            <h2>What you Give Away</h2>
+            <p>Login credentials, session cookies, and unencrypted form data are the common targets. Sites using HTTPS protect the content of a page, but not which sites you visit.</p>
+            <h2>Staying Safe</h2>
+            <h3>Use a VPN</h3>
+            <p>A VPN encrypts your traffic end to end, so a network eavesdropper sees only ciphertext.</p>
+            <h3>Verify the Network Name</h3>
+            <p>Ask staff for the exact SSID rather than connecting to the first matching name.</p>
+            <h3>Prefer HTTPS and avoid Sensitive Logins</h3>
+            <p>Skip banking, shopping, and anything requiring payment details while on an open network. Wait until you are on mobile data or a trusted connection.</p>
+
+
+
+
+
+
+       <h3>Quick Check: Public Wifi Risks</h3>
+        <div class="quiz" data-correct="c">
+            <div class="quiz-options">
+    <button class="quiz-btn" data-answer="a">A (Public Wi-Fi is faster than home Wi-Fi</button>
+    <button class="quiz-btn" data-answer="b">B (Public Wi-Fi always requires a password</button>
+    <button class="quiz-btn" data-answer="c">C (Traffic onan open network can be intercepted by others on the same network</button>
+    <button class="quiz-btn" data-answer="d">D (Public Wi-Fi automatically encrypts your data</button>
+    <p class="quiz-feedback" style="display: none;"></p>
+</div>
+        </div>
         </div>
         <!--Lesson 6 -->
          <div id="lesson-6" class="lesson-content-section hidden">
-            <h2>Lesson 6: Reporting Security Incidents</h2>
-            <p>Strong passwords are essential for protecting your online accounts. Use a combination of uppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable information like birthdays or common words.</p>
-            <p>Multi-Factor Authentication (MFA) adds an extra layer of security by requiring users to provide two or more verification factors to gain access to an account. This can include something you know (password), something you have (security token), or something you are (biometric verification).</p>
+            <h1>Lesson 6: Device & Software Maintenance</h1>
+    <h2>Why Updates Matter</h2>
+    <img src="yo.png">
+    <p>Most malware relies on vulnerabilities that vendors have already patched. Running outdated software means running known holes.</p>
+    <h2>Patching Your Operating System</h2>
+    <p>Enable automatic updates for your OS and browser. These two get the most attention from attackers because they run continuously and handle untrusted content.</p>
+    <h2>Application Updates</h2>
+    <h3>Third-Party Software</h3>
+    <p>PDF readers, media players, and office suites are common targets. Update them alongside your OS rather than once a year.</p>
+    <h3>Remove What You Don't Use</h3>
+    <p>Every installed program is potential attack surface. Uninstall anything you no longer need.</p>
+    <h2>Antivirus & Firewalls</h2>
+    <p>Keep built-in protection enabled and its definitions current. It won't catch everything, but it catches the known and the lazy.</p>
+    <h2>Backups</h2>
+    <h3>The 3-2-1 Rule</h3>
+    <p>Three copies of your data, on two different media, with one stored off-site. This is what makes ransomware survivable.</p>
+    <h3>Test Your Restores</h3>
+    <p>A backup you have never restored from is an assumption, not a backup. Recover a file periodically to confirm it works.</p>
+
+
+
+
+
+
+       <div class="quiz" data-correct="b">
+            <h3>Quick Check: Software Updates</h3>
+            <div class="quiz-options">
+    <button class="quiz-btn" data-answer="a">A (Updates only add new features</button>
+    <button class="quiz-btn" data-answer="b">B (Updates patch known security vulnerabilities attackers can exploit</button>
+    <button class="quiz-btn" data-answer="c">C (Delaying updates improves performance</button>
+    <button class="quiz-btn" data-answer="d">D (Only major versions matter</button>
+    <p class="quiz-feedback" style="display: none;"></p>
+</div>
+       </div>
         </div>
-         </div>
-         <div class="screen" id="screen-modes">
-            <button class="back-btn" onclick="goBack()">Back</button>
+         
+    
          </div>
     </main>
 
 
     <div class="screen  "  id="screen-game">
         <div id="hud">
-            Round<span id="round">1</span><span id="total"></span> | Score: <span id="score">0</span>
+            Round <span id="round">1</span> of <span id="total"></span> | Score: <span id="score">0</span>
         </div>
         <div id="msg"></div>
         <div id="stage">
