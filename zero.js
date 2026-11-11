@@ -108,32 +108,32 @@ feedback.style.display = "block";
 
 
     const rounds = [
-{img: "1.png", region: {x: 30, y: 3, w: 45, h: 15},
+{img: "./ImagesZeroTrust/1.png", region: {x: 30, y: 3, w: 45, h: 15},
  why: "The display name read Bank of America but the sender is trust.ameribank7.com. A real bank mails from its own domain; an unrelated or mispelled domain is the giveaway."
  },
 {
-    img: "2.png", region: {x: 9, y: 58, w: 42, h: 13}, why: " A billing-hold notice with a single high-pressure button. Update now pushes you to act before you check whether the site is really Netflix; hovering the link would reveal a non-Netflix domain. " 
+    img: "./ImagesZeroTrust/2.png", region: {x: 9, y: 58, w: 42, h: 13}, why: " A billing-hold notice with a single high-pressure button. Update now pushes you to act before you check whether the site is really Netflix; hovering the link would reveal a non-Netflix domain. "
 },
 {
-    img: "Quishing.png", region: {x: 5, y: 45, w: 22, h: 32}, why: "A QR code in an email you didn't expect. The code hides the real destination, so you can't inspect it before scanning — the URL is only visible after the phone has already opened it." 
-},
-
-{
-    img: "Malware.png", region: {x: 40, y: 84, w: 22, h: 10}, why: " A fake antivirus alert. Real scanners don't show a browser-style window with alarming 27 critical security weaknesses copy and a single button — that button is what installs the thing it claims to remove." 
+    img: "./ImagesZeroTrust/Quishing.png", region: {x: 5, y: 45, w: 22, h: 32}, why: "A QR code in an email you didn't expect. The code hides the real destination, so you can't inspect it before scanning — the URL is only visible after the phone has already opened it."
 },
 
 {
-    img: "WeakPassword.png", region: {x: 25, y: 35, w: 40, h: 16}, why: "A password on a sticky note in view of the screen. Anyone who walks past, or any camera pointed at the desk, has the credential." 
+    img: "./ImagesZeroTrust/Malware.png", region: {x: 40, y: 84, w: 22, h: 10}, why: " A fake antivirus alert. Real scanners don't show a browser-style window with alarming 27 critical security weaknesses copy and a single button — that button is what installs the thing it claims to remove." 
 },
 
 {
-    img: "PasswordExposed.png", region: {x: 38, y: 40, w: 28, h: 16}, why: "A saved password visible in a login form. Shoulder-surfing or a shared screen is enough, and it's the kind of value that gets reused after a breach." 
+    img: "./ImagesZeroTrust/WeakPassword.png", region: {x: 25, y: 35, w: 40, h: 16}, why: "A password on a sticky note in view of the screen. Anyone who walks past, or any camera pointed at the desk, has the credential." 
+},
+
+{
+    img: "./ImagesZeroTrust/PasswordExposed.png", region: {x: 38, y: 40, w: 28, h: 16}, why: "A saved password visible in a login form. Shoulder-surfing or a shared screen is enough, and it's the kind of value that gets reused after a breach."
 },
 {
-    img: "PackageScam.png", region: {x: 16, y: 85, w: 40, h: 14}, why: "A short link in a missed delivery SMS. The bit.ly wrapper hides where it actually goes, and the reschedule here phrasing is the pressure tactic." 
+    img: "./ImagesZeroTrust/PackageScam.png", region: {x: 16, y: 85, w: 40, h: 14}, why: "A short link in a missed delivery SMS. The bit.ly wrapper hides where it actually goes, and the reschedule here phrasing is the pressure tactic."
 },
 {
-    img: "GiveAwayScam.png", region: {x: 2, y: 42, w: 64, h: 11}, why: "The countdown and the number of gifts is limited line. Manufactured scarcity plus a timer is the core of a giveaway scam." 
+    img: "./ImagesZeroTrust/GiveAwayScam.png", region: {x: 2, y: 42, w: 64, h: 11}, why: "The countdown and the number of gifts is limited line. Manufactured scarcity plus a timer is the core of a giveaway scam."
 }
 
 
