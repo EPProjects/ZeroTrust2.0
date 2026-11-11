@@ -29,7 +29,7 @@ A fun, interactive way to learn about the dangers that lie within the internet
 
 
 # Playable Demo
-https://inspiring-froyo-55c6f6.netlify.app
+https://zerotrust20.vercel.app/#
 
 ## Help
 If interactive modules do not render properly:
